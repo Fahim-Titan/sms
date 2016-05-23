@@ -1,0 +1,18 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class Result extends Model {
+
+	protected $table = 'results';
+	public $timestamps = true;
+	protected $fillable = array('id', 'sub_id', 'e_id');
+
+	public function exam_info()
+	{
+		return $this->belongsTo('Exam_info', 'e_id');
+	}
+
+}
