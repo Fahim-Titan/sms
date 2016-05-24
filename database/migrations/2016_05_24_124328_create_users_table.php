@@ -23,6 +23,8 @@ class CreateUsersTable extends Migration {
 			$table->string('image', 100);
 			$table->string('qualification', 100)->nullable();
 			$table->string('blood_type', 10)->nullable();
+			$table->string('gender', 10);
+			$table->string('roles', 15);
 		});
 	}
 

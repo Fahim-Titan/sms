@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+use App\User;
+use Carbon\Carbon;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
+
 class UserController extends Controller {
 
   /**
@@ -9,7 +14,8 @@ class UserController extends Controller {
    */
   public function index()
   {
-    return 'something';
+    return view('users');
+//    return 'something';
   }
 
   /**
@@ -19,7 +25,7 @@ class UserController extends Controller {
    */
   public function create()
   {
-    return view('users');
+//    return view('users');
   }
 
   /**
@@ -27,9 +33,31 @@ class UserController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Requests\createUserRequest $request)
   {
-    
+    $user = new User();
+    $user->name = $request->name;
+    $user->blood_type = $request->blood_type;
+    $user->email  = $request->email;
+    $user->dob = $request->dob;
+    $user->contact_number = $request->contact_number;
+    $user->address = $request->address;
+    $user->guardian_name = $request->guardian_name;
+    $user->gurdian_phone_number = $request->gurdian_phone_number;
+    $user->guardian_email = $request->guardian_email;
+    $user->gender = $request->gender;
+    $user->roles = $request->roles;
+    $user->qualification = $request->qualification;
+    if($request->hasFile('image')){
+      $file = Input::file('image');
+      $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
+      $name = $timestamp . '-' . $file->getClientOriginalName();
+      $user->image = $name;
+      $file->move(public_path() . '/user_images', $name);
+    }
+    $user->password = bcrypt($request-> password);
+    $user->save();
+    return "saved";
   }
 
   /**
