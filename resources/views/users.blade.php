@@ -6,7 +6,7 @@
 	</li>
 	<li>
 		{!! Form::label('dob', 'Dob:') !!}
-		{!! Form::text('dob') !!}
+		{!! Form::date('dob',\Carbon\Carbon::now()) !!}
 	</li>
 	<li>
 		{!! Form::label('address', 'Address:') !!}
@@ -38,7 +38,7 @@
 	</li>
 	<li>
 		{!! Form::label('image', 'Image:') !!}
-		{!! Form::text('image') !!}
+		{!! Form::file('image') !!}
 	</li>
 	<li>
 		{!! Form::label('qualification', 'Qualification:') !!}
@@ -50,12 +50,13 @@
 	</li>
 	<li>
 		{!! Form::label('gender', 'Gender:') !!}
-		{!! Form::text('gender') !!}
+{{--		{!! Form::text('gender') !!}--}}
+		{!! Form::select('gender',array('male'=>'Male','female'=>'Female'),null,['placeholder' => 'Select your gender']) !!}
 	</li>
 	<li>
 		{!! Form::label('roles', 'Roles:') !!}
 		{{--{!! Form::text('roles') !!}--}}
-		{!! Form::select('size', array('admin' => 'Admin', 'teacher' => 'Teacher','student' => 'Student'), null, ['placeholder' => 'Select your roles'])!!}
+		{!! Form::select('roles', array('admin' => 'Admin', 'teacher' => 'Teacher','student' => 'Student'), null, ['placeholder' => 'Select your roles'])!!}
 	</li>
 	<li>
 		{!! Form::submit() !!}
