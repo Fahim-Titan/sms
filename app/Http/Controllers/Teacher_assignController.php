@@ -1,5 +1,12 @@
 <?php namespace App\Http\Controllers;
 
+use App\Subject;
+use App\Class_branch;
+use App\Teacher_assign;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
+use DB;
+use App\Http\Requests;
 class Teacher_assignController extends Controller {
 
   /**
@@ -10,6 +17,10 @@ class Teacher_assignController extends Controller {
   public function index()
   {
     return 'u r in teacher assign page';
+    $sub_info = DB::table('subjects')->lists('sub_name','sub_id');
+    $sub_info = DB::table('class_branches')->lists('name','cb_id');
+//    ai khane jodi keu amon kono akta subject choose korlo jeta
+//    already class_branch table a assign kore nai tahole tokhn ki hobe??
   }
 
   /**

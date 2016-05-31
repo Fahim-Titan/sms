@@ -18,8 +18,10 @@ class SubjectController extends Controller {
 //     return view('subjects');
 //     return 'you are in subjects page';
     $class = new Class_branch();
-    $class_info=DB::table('class_branches')->select('name')->get();
+//    $class_info=DB::table('class_branches')->select('name','cb_id')->get();
+    $class_info=DB::table('class_branches')->lists('name','cb_id');
 //    $class_info = 'asdf';
+//    $class_info = Class_branch::lists('cb_id','name');
     return view('subjects',compact('class_info'));
   }
 
