@@ -1,4 +1,4 @@
-{!! Form::open(array('route' => 'route.name', 'method' => 'POST')) !!}
+{!! Form::open(array('route' => 'subject.store', 'method' => 'POST')) !!}
 	<ul>
 		<li>
 			{!! Form::label('cb_id', 'Cb_id:') !!}
@@ -17,3 +17,7 @@
 		</li>
 	</ul>
 {!! Form::close() !!}
+
+@foreach($class_info as $info)
+{{$info->name}}
+	@endforeach

@@ -1,4 +1,4 @@
-{!! Form::open(array('route' => 'route.name', 'method' => 'POST')) !!}
+{!! Form::open(array('route' => 'class.store', 'method' => 'POST')) !!}
 	<ul>
 		<li>
 			{!! Form::label('name', 'Name:') !!}
@@ -6,7 +6,7 @@
 		</li>
 		<li>
 			{!! Form::label('year', 'Year:') !!}
-			{!! Form::text('year') !!}
+			{!! Form::date('year') !!}
 		</li>
 		<li>
 			{!! Form::submit() !!}

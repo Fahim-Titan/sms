@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+use App\Class_branch;
+use Carbon\Carbon;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
+
 class Class_branchController extends Controller {
 
   /**
@@ -9,7 +14,8 @@ class Class_branchController extends Controller {
    */
   public function index()
   {
-    return ' you are in class branch page';
+//    return ' you are in class branch page';
+    return view('class_branches');
   }
 
   /**
@@ -19,7 +25,8 @@ class Class_branchController extends Controller {
    */
   public function create()
   {
-    return view('class_branches');
+//    return view('class_branches');
+
   }
 
   /**
@@ -27,9 +34,14 @@ class Class_branchController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Requests\classbranchRequest $request)
   {
-    
+    $class = new Class_branch();
+    $class->name = $request->name;
+    $class->year = $request->year;
+    $class->created_at = Carbon::now();
+    $class->save();
+    return 'saved';
   }
 
   /**

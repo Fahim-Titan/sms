@@ -1,5 +1,11 @@
 <?php namespace App\Http\Controllers;
 
+use App\Subject;
+use App\Class_branch;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
+use DB;
+use App\Http\Requests;
 class SubjectController extends Controller {
 
   /**
@@ -9,7 +15,12 @@ class SubjectController extends Controller {
    */
   public function index()
   {
-     return 'you are in subjects page';
+//     return view('subjects');
+//     return 'you are in subjects page';
+    $class = new Class_branch();
+    $class_info=DB::table('class_branches')->select('name')->get();
+//    $class_info = 'asdf';
+    return view('subjects',compact('class_info'));
   }
 
   /**
@@ -27,9 +38,14 @@ class SubjectController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Requests\createSubjectRequest $request)
   {
-    
+    $subject = new Subject();
+    $subject->cb_id = $request->cb_id;
+    $subject->sub_name = $request->sub_name;
+    $subject->textbook_name = $request->textbook_name;
+    $subject->save();
+    return 'data saved';
   }
 
   /**
