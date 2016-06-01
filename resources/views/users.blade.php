@@ -1,65 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>@yield('title')</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Bootstrap css file-->
+	<link rel="stylesheet" href="{{ URL::to('src/css/bootstrap.min.css')}}">
+	<style>
+		.my-form-size
+		{
+			width: 50%;
+		}
+	</style>
+</head>
+<body>
+<div class="container">
+	<h1 class="text-center">Add User</h1>
+	<hr>
 {!! Form::open(array('route' => 'user.store', 'method' => 'POST', 'files' => true)) !!}
-<ul>
-	<li>
+
+	<div class="form-group">
 		{!! Form::label('name', 'Name:') !!}
-		{!! Form::text('name') !!}
-	</li>
-	<li>
-		{!! Form::label('dob', 'Dob:') !!}
-		{!! Form::date('dob',\Carbon\Carbon::now()) !!}
-	</li>
-	<li>
+		{!! Form::text('name',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
+		{!! Form::label('dob', 'Dob:') !!}<br>
+		{!! Form::date('dob',\Carbon\Carbon::now(),null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
 		{!! Form::label('address', 'Address:') !!}
-		{!! Form::text('address') !!}
-	</li>
-	<li>
+		{!! Form::text('address',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
 		{!! Form::label('email', 'Email:') !!}
-		{!! Form::text('email') !!}
-	</li>
-	<li>
-		{!! Form::label('contact_number', 'Contact_number:') !!}
-		{!! Form::text('contact_number') !!}
-	</li>
-	<li>
-		{!! Form::label('guardian_name', 'Guardian_name:') !!}
-		{!! Form::text('guardian_name') !!}
-	</li>
-	<li>
-		{!! Form::label('gurdian_phone_number', 'Gurdian_phone_number:') !!}
-		{!! Form::text('gurdian_phone_number') !!}
-	</li>
-	<li>
-		{!! Form::label('guardian_email', 'Guardian_email:') !!}
-		{!! Form::text('guardian_email') !!}
-	</li>
-	<li>
+		{!! Form::text('email',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
+		{!! Form::label('contact_number', 'Contact Number:') !!}
+		{!! Form::text('contact_number',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
+		{!! Form::label('guardian_name', 'Guardian Name:') !!}
+		{!! Form::text('guardian_name',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
+		{!! Form::label('gurdian_phone_number', 'Gurdian Phone Number:') !!}
+		{!! Form::text('gurdian_phone_number',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
+		{!! Form::label('guardian_email', 'Guardian Email:') !!}
+		{!! Form::text('guardian_email',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
 		{!! Form::label('password', 'Password:') !!}
-		{!! Form::text('password') !!}
-	</li>
-	<li>
+		{!! Form::text('password',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
 		{!! Form::label('image', 'Image:') !!}
-		{!! Form::file('image') !!}
-	</li>
-	<li>
+		{!! Form::file('image',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
 		{!! Form::label('qualification', 'Qualification:') !!}
-		{!! Form::text('qualification') !!}
-	</li>
-	<li>
-		{!! Form::label('blood_type', 'Blood_type:') !!}
-		{!! Form::text('blood_type') !!}
-	</li>
-	<li>
+		{!! Form::text('qualification',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
+		{!! Form::label('blood_type', 'Blood Type:') !!}
+		{!! Form::text('blood_type',null,['class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
 		{!! Form::label('gender', 'Gender:') !!}
 {{--		{!! Form::text('gender') !!}--}}
-		{!! Form::select('gender',array('male'=>'Male','female'=>'Female'),null,['placeholder' => 'Select your gender']) !!}
-	</li>
-	<li>
+		{!! Form::select('gender',array('male'=>'Male','female'=>'Female'),null,['placeholder' => 'Select your gender', 'class' => 'form-control']) !!}
+	</div>
+	<div class="form-group">
 		{!! Form::label('roles', 'Roles:') !!}
 		{{--{!! Form::text('roles') !!}--}}
-		{!! Form::select('roles', array('admin' => 'Admin', 'teacher' => 'Teacher','student' => 'Student'), null, ['placeholder' => 'Select your roles'])!!}
-	</li>
-	<li>
-		{!! Form::submit() !!}
-	</li>
-</ul>
+		{!! Form::select('roles', array('admin' => 'Admin', 'teacher' => 'Teacher','student' => 'Student'), null, ['placeholder' => 'Select your roles', 'class' => 'form-control'])!!}
+	</div>
+	<div class="form-group">
+		{!! Form::submit(null, ['class' => 'btn btn-default']) !!}
+	</div>
+
 {!! Form::close() !!}
+	</div>
+<!-- initialize jQuery Library -->
+<script src="{{ URL::to('src/js/jequery.min.js')}}"></script>
+<!-- Bootstrap js -->
+<script src="{{ URL::to('src/js/bootstrap.min.js')}}"></script>
+</body>
+</html>
