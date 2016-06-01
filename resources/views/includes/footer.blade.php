@@ -14,11 +14,11 @@
                     <div class="single_footer_widget">
                         <h3>Community</h3>
                         <ul class="footer_widget_nav">
-                            <li><a href="#">Our Tutors</a></li>
-                            <li><a href="#">Our Students</a></li>
-                            <li><a href="#">Our Team</a></li>
-                            <li><a href="#">Forum</a></li>
-                            <li><a href="#">News &amp; Media</a></li>
+                            <li><a href="#" style="color: #fff;">Our Tutors</a></li>
+                            <li><a href="#" style="color: #fff;">Our Students</a></li>
+                            <li><a href="#" style="color: #fff;">Our Team</a></li>
+                            <li><a href="#" style="color: #fff;">Forum</a></li>
+                            <li><a href="#" style="color: #fff;">News &amp; Media</a></li>
                         </ul>
                     </div>
                 </div>
@@ -26,11 +26,11 @@
                     <div class="single_footer_widget">
                         <h3>Others</h3>
                         <ul class="footer_widget_nav">
-                            <li><a href="#">Link 1</a></li>
-                            <li><a href="#">Link 2</a></li>
-                            <li><a href="#">Link 3</a></li>
-                            <li><a href="#">Link 4</a></li>
-                            <li><a href="#">Link 5</a></li>
+                            <li><a href="#" style="color: #fff;">Link 1</a></li>
+                            <li><a href="#" style="color: #fff;">Link 2</a></li>
+                            <li><a href="#" style="color: #fff;">Link 3</a></li>
+                            <li><a href="#" style="color: #fff;">Link 4</a></li>
+                            <li><a href="#" style="color: #fff;">Link 5</a></li>
                         </ul>
                     </div>
                 </div>
