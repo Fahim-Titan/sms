@@ -17,7 +17,7 @@ class Subject extends Model {
 
 	public function cbranch()
 	{
-		return $this->belongsToMany('Class_branch');
+		return $this->belongsToMany('Class_branch','cb_id','cb_id');
 	}
 
 }
