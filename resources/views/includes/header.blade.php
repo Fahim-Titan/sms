@@ -24,8 +24,8 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url('/home') }}">Home</a></li>
-                <li><a href="{{url('/teacher_list')}}">Teacher List</a></li>
+                <li><a href="{{ url('/') }}">Home</a></li>
+                <li><a href="{{url('/teacher')}}">Teacher List</a></li>
                 <li><a href="#">Course</a></li>
                 <li><a href="#">Notices</a></li>
                 <li><a href="#">Contact</a></li>

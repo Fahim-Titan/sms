@@ -17,18 +17,8 @@ class Teacher_assignController extends Controller {
   public function index()
   {
 //    return 'u r in teacher assign page';
-    $sub_info = DB::table('subjects')->lists('sub_name','sub_id');
-    $class_info = DB::table('class_branches')->lists('name','cb_id');
-    $teacher = DB::table('users')->where('roles','=','teacher')->lists('name','id');
-//      $sub_info = DB::select('sub_name','sub_id','cb_id','cb_name')->join;
-
-//    $c_name = DB::table('cbranches')->where("$sub_info->
-
-//    ai khane jodi keu amon kono akta subject choose korlo jeta
-//    already class_branch table a assign kore nai tahole tokhn ki hobe??
-      return view('teacher_assigns',compact('sub_info','class_info','teacher'));
-
-
+    $teacher = DB::table('users')->where('roles','=','teacher')->get();
+    return view('teachers_list',compact('teacher'));
   }
 
   /**
@@ -38,7 +28,17 @@ class Teacher_assignController extends Controller {
    */
   public function create()
   {
-    return view('teacher_assigns');
+//    return view('teacher_assigns');
+    $sub_info = DB::table('subjects')->lists('sub_name','sub_id');
+    $class_info = DB::table('class_branches')->lists('name','cb_id');
+    $teacher = DB::table('users')->where('roles','=','teacher')->lists('name','id');
+//      $sub_info = DB::select('sub_name','sub_id','cb_id','cb_name')->join;
+
+//    $c_name = DB::table('cbranches')->where("$sub_info->
+
+//    ai khane jodi keu amon kono akta subject choose korlo jeta
+//    already class_branch table a assign kore nai tahole tokhn ki hobe??
+    return view('teacher_assigns',compact('sub_info','class_info','teacher'));
   }
 
   /**
