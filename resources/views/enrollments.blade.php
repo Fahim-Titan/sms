@@ -1,4 +1,4 @@
-{!! Form::open(array('route' => 'route.name', 'method' => 'POST')) !!}
+{!! Form::open(array('route' => 'enrollment.store', 'method' => 'POST')) !!}
 	<ul>
 		<li>
 			{!! Form::label('id', 'Id:') !!}
@@ -13,3 +13,10 @@
 		</li>
 	</ul>
 {!! Form::close() !!}
+
+{{--ai gula k option er moddhe dhukate hobe.--}}
+@foreach($info as $key)
+	{{$key -> sub_id}} -> {{$key->sub_name}} ===>
+	{{$key-> cb_id}} -> {{$key->name}}
+	<br>
+	@endforeach
