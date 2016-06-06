@@ -30,3 +30,5 @@ Route::resource('exam_info', 'Exam_infoController');
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
+
+
