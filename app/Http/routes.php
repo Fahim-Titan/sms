@@ -26,6 +26,7 @@ Route::resource('attendence', 'AttendenceController');
 Route::resource('file', 'FileController');
 Route::resource('result', 'ResultController');
 Route::resource('exam_info', 'Exam_infoController');
+Route::resource('admin','AdminController');
 
 Route::auth();
 

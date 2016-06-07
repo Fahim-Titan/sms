@@ -7,7 +7,7 @@ class Exam_infoController extends Controller {
    *
    * @return Response
    */
-  public function index()
+ public function index()
   {
     return 'exam info page';
   }
@@ -29,7 +29,7 @@ class Exam_infoController extends Controller {
    */
   public function store()
   {
-    
+
   }
 
   /**
@@ -40,7 +40,7 @@ class Exam_infoController extends Controller {
    */
   public function show($id)
   {
-    
+
   }
 
   /**
@@ -51,7 +51,7 @@ class Exam_infoController extends Controller {
    */
   public function edit($id)
   {
-    
+
   }
 
   /**
@@ -62,7 +62,7 @@ class Exam_infoController extends Controller {
    */
   public function update($id)
   {
-    
+
   }
 
   /**
@@ -73,9 +73,9 @@ class Exam_infoController extends Controller {
    */
   public function destroy($id)
   {
-    
+
   }
-  
+
 }
 
 ?>

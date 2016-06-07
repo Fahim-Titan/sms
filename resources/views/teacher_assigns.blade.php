@@ -18,7 +18,7 @@
 	<h1 class="text-center">Teacher Assign</h1>
 	<hr>
 {!! Form::open(array('route' => 'teacher.store', 'method' => 'POST')) !!}
-	
+
 		<div class="form-group">
 			{!! Form::label('sub_id', 'Subject ID:') !!}
 			{!! Form::select('sub_id',$sub_info,null,['placeholder' => 'Select Subject','class' => 'form-control']) !!}
@@ -34,7 +34,7 @@
 		<div class="form-group">
 			{!! Form::submit(null, ['class' => 'btn btn-default']) !!}
 		</div>
-	
+
 {!! Form::close() !!}
 </div>
 <!-- initialize jQuery Library -->

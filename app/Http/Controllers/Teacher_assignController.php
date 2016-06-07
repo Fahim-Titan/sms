@@ -17,8 +17,12 @@ class Teacher_assignController extends Controller {
   public function index()
   {
 //    return 'u r in teacher assign page';
-    $teacher = DB::table('users')->where('roles','=','teacher')->get();
-    return view('teachers_list',compact('teacher'));
+//    $teacher = DB::table('users')->where('roles','=','teacher')->get();
+//    return view('teachers_list',compact('teacher'));
+
+    return view('teacher.dashboard');
+//    $info = DB::Select(DB::raw("select subjects.sub_id,subjects.cb_id, class_branches.name, subjects.sub_name, subjects.textbook_name from class_branches, subjects where class_branches.cb_id = subjects.cb_id"));
+//    return view('teacher_assigns',compact('info','teacher'));
   }
 
   /**
@@ -29,16 +33,18 @@ class Teacher_assignController extends Controller {
   public function create()
   {
 //    return view('teacher_assigns');
-    $sub_info = DB::table('subjects')->lists('sub_name','sub_id');
-    $class_info = DB::table('class_branches')->lists('name','cb_id');
-    $teacher = DB::table('users')->where('roles','=','teacher')->lists('name','id');
+//    $sub_info = DB::table('subjects')->lists('sub_name','sub_id');
+//    $class_info = DB::table('class_branches')->lists('name','cb_id');
+//    $teacher = DB::table('users')->where('roles','=','teacher')->lists('name','id');
 //      $sub_info = DB::select('sub_name','sub_id','cb_id','cb_name')->join;
 
 //    $c_name = DB::table('cbranches')->where("$sub_info->
 
 //    ai khane jodi keu amon kono akta subject choose korlo jeta
 //    already class_branch table a assign kore nai tahole tokhn ki hobe??
-    return view('teacher_assigns',compact('sub_info','class_info','teacher'));
+//    $info = DB::Select(DB::raw("select subjects.sub_id,subjects.cb_id, class_branches.name, subjects.sub_name, subjects.textbook_name from class_branches, subjects where class_branches.cb_id = subjects.cb_id"));
+//    return view('teacher_assigns',compact('info'));
+//    return view('teacher_assigns',compact('sub_info','class_info','teacher'));
   }
 
   /**
