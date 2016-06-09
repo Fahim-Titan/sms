@@ -31,12 +31,12 @@ class AuthController extends Controller
     protected function authenticated($request,$user)
     {
         if($user->roles === 'teacher'){
-//            return redirect('teacher');
-            return 'you are teacher';
+            return redirect('teacher');
+//            return 'you are teacher';
         }
         elseif($user->roles === 'admin'){
-//            return redirect('admin');
-            return 'you are admin';
+            return redirect('admin');
+//            return 'you are admin';
         }
 
         else {

@@ -16,24 +16,24 @@
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 Student <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Add</a></li>
-                <li><a href="#">Update</a></li>
+                <li><a href="{{url('add-student')}}">Add</a></li>
+                <li><a href="{{url('update-student')}}">Update</a></li>
             </ul>
         </div>
         <div class="btn-group">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 Teacher <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Add</a></li>
-                <li><a href="#">Update</a></li>
+                <li><a href="{{url('add-teacher')}}">Add</a></li>
+                <li><a href="{{url('update-teacher')}}">Update</a></li>
             </ul>
         </div>
         <div class="btn-group">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 Class <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Add</a></li>
-                <li><a href="#">Update</a></li>
+                <li><a href="{{url('add-class')}}">Add</a></li>
+                <li><a href="{{url('update-class')}}">Update</a></li>
             </ul>
         </div>
         <div class="btn-group">
@@ -44,9 +44,9 @@
                 <li><a href="#">Update</a></li>
             </ul>
         </div>
-        <button type="button" class="btn btn-primary">Enrollment</button>
-        <button type="button" class="btn btn-primary">Notice</button>
-        <button type="button" class="btn btn-primary">Result</button>
+        <button type="button" class="btn btn-primary"><a href="{{url('enrollment')}}">Enrollment</a></button>
+        <button type="button" class="btn btn-primary"><a href="{{url('file')}}">Notice</a></button>
+        <button type="button" class="btn btn-primary"><a href="{{url('result')}}">Result</a></button>
     </div>
 
 </div>

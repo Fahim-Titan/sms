@@ -25,7 +25,7 @@ class Class_branchController extends Controller {
    */
   public function create()
   {
-//    return view('class_branches');
+    return view('class_branches');
 
   }
 

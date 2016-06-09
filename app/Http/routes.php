@@ -33,3 +33,18 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 
+//for admin links
+//student
+//create a student. -- need to create a new blade page.
+Route::get('/add-student','UserController@create');
+//need to think about this. how do i want to update a student!!
+Route::get('/update-student','UserController@update');
+
+//teacher
+//create a teacher
+Route::get('/add-teacher','UserController@create');
+//need to think about this. how do i want to update a teacher!!
+Route::get('/update-teacher','UserController@update');
+
+//class_branch
+Route::get('/add-class','Class_branchController@create');
