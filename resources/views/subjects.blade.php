@@ -41,6 +41,8 @@
 	{{--@endforeach--}}
 
 </div>
+
+
 <!-- initialize jQuery Library -->
 <script src="{{ URL::to('src/js/jequery.min.js')}}"></script>
 <!-- Bootstrap js -->

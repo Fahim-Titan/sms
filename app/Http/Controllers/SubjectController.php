@@ -19,10 +19,10 @@ class SubjectController extends Controller {
 //     return 'you are in subjects page';
     $class = new Class_branch();
 //    $class_info=DB::table('class_branches')->select('name','cb_id')->get();
-    $class_info=DB::table('class_branches')->lists('name','cb_id');
+
 //    $class_info = 'asdf';
 //    $class_info = Class_branch::lists('cb_id','name');
-    return view('subjects',compact('class_info'));
+
   }
 
   /**
@@ -32,7 +32,8 @@ class SubjectController extends Controller {
    */
   public function create()
   {
-    return view('subjects');
+    $class_info=DB::table('class_branches')->lists('name','cb_id');
+    return view('subjects',compact('class_info'));
   }
 
   /**
@@ -47,7 +48,8 @@ class SubjectController extends Controller {
     $subject->sub_name = $request->sub_name;
     $subject->textbook_name = $request->textbook_name;
     $subject->save();
-    return 'data saved';
+//    return 'data saved';
+    return view('admin.dashboard')->withSuccess('data has been saved');
   }
 
   /**

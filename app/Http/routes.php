@@ -48,3 +48,6 @@ Route::get('/update-teacher','UserController@update');
 
 //class_branch
 Route::get('/add-class','Class_branchController@create');
+
+//subject
+Route::get('/add-subject','SubjectController@create');

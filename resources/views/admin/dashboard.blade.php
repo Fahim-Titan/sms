@@ -40,7 +40,7 @@
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
                 Subject <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Add</a></li>
+                <li><a href="{{url('add-subject')}}">Add</a></li>
                 <li><a href="#">Update</a></li>
             </ul>
         </div>
@@ -50,6 +50,19 @@
     </div>
 
 </div>
+
+@if (!empty($success))
+{{ $success }}
+@endif
+
+@if($errors->any())
+
+    <ul class="alert alert-danger">
+        @foreach($errors->all() as $error)
+             <li>{{$error}}</li>
+        @endforeach
+    </ul>
+@endif
 
 @include('includes.dashboard_footer')
         <!-- initialize jQuery Library -->
