@@ -51,3 +51,9 @@ Route::get('/add-class','Class_branchController@create');
 
 //subject
 Route::get('/add-subject','SubjectController@create');
+
+
+
+//for teacher links
+//upload files
+Route::get('/upload-files','FileController@create');

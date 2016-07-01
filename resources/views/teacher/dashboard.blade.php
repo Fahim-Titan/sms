@@ -14,9 +14,9 @@
     <div class="btn-group">
         <div class="btn-group">
             <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                Sony <span class="caret"></span></button>
+                file upload <span class="caret"></span></button>
             <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Tablet</a></li>
+                <li><a href="{{url('upload-files')}}">Upload File</a></li>
                 <li><a href="#">Smartphone</a></li>
             </ul>
         </div>

@@ -9,7 +9,8 @@ class FileController extends Controller {
    */
   public function index()
   {
-    return 'you r in file uploading page';
+    //return 'you r in file uploading page';
+    return view('files');
   }
 
   /**
@@ -29,7 +30,7 @@ class FileController extends Controller {
    */
   public function store()
   {
-    
+
   }
 
   /**

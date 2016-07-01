@@ -1,19 +1,19 @@
-{!! Form::open(array('route' => 'route.name', 'method' => 'POST')) !!}
+{!! Form::open(array('route' => 'file.store', 'method' => 'POST', 'files' => true)) !!}
 	<ul>
 		<li>
 			{!! Form::label('file_path', 'File_path:') !!}
-			{!! Form::text('file_path') !!}
+			{!! Form::file('file_path') !!}
 		</li>
 		<li>
 			{!! Form::label('date', 'Date:') !!}
-			{!! Form::text('date') !!}
+			{!! Form::date('date') !!}
 		</li>
 		<li>
 			{!! Form::label('type', 'Type:') !!}
-			{!! Form::text('type') !!}
+			{!! Form::select('type', array('notice'=> 'Notices', 'files' => 'Files'), null, ['placeholder' => 'Select your roles'])!!}
 		</li>
 		<li>
-			{!! Form::label('id', 'Id:') !!}
+			{!! Form::label('id', 'give your own Id number:') !!}
 			{!! Form::text('id') !!}
 		</li>
 		<li>
