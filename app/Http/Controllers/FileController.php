@@ -1,5 +1,10 @@
 <?php namespace App\Http\Controllers;
 
+use App\File;
+use Carbon\Carbon;
+use App\Http\Requests;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Auth;
 class FileController extends Controller {
 
   /**
@@ -28,9 +33,23 @@ class FileController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Requests\FileUploadRequest $request)
   {
+    $fileUpload = new File();
+    $fileUpload->id = Auth::id();
+    $fileUpload->date = $request->date;
+    $fileUpload->type = $request->type;
 
+    if($request->hasFile('file_path')){
+      $file = Input::file('file_path');
+      $timestamp = str_replace([' ', ':'], '-', Carbon::now()->toDateTimeString());
+      $name = $timestamp . '-' . $file->getClientOriginalName();
+      $fileUpload->file_path = $name;
+      $file->move(public_path() . '/files', $name);
+    }
+    $fileUpload->save();
+
+    return "saved";
   }
 
   /**

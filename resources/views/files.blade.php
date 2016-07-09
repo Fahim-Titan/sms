@@ -1,3 +1,7 @@
+you are signed in as {{Auth::user()->name}}
+{{--{{Auth::id()}}--}}
+
+
 {!! Form::open(array('route' => 'file.store', 'method' => 'POST', 'files' => true)) !!}
 	<ul>
 		<li>
@@ -12,10 +16,7 @@
 			{!! Form::label('type', 'Type:') !!}
 			{!! Form::select('type', array('notice'=> 'Notices', 'files' => 'Files'), null, ['placeholder' => 'Select your roles'])!!}
 		</li>
-		<li>
-			{!! Form::label('id', 'give your own Id number:') !!}
-			{!! Form::text('id') !!}
-		</li>
+
 		<li>
 			{!! Form::submit() !!}
 		</li>
