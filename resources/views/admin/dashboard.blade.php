@@ -44,9 +44,11 @@
                 <li><a href="#">Update</a></li>
             </ul>
         </div>
-        <button type="button" class="btn btn-primary"><a href="{{url('enrollment')}}">Enrollment</a></button>
-        <button type="button" class="btn btn-primary"><a href="{{url('file')}}">Notice</a></button>
-        <button type="button" class="btn btn-primary"><a href="{{url('result')}}">Result</a></button>
+        <button type="button" class="btn btn-primary"><a href="{{url('enrollment')}}" style="color: #ffffff;">Enrollment</a></button>
+        <button type="button" class="btn btn-primary"><a href="{{url('result')}}" style="color: #ffffff;">Result</a></button>
+        <button type="button" class="btn btn-primary"><a href="{{url('file')}}" style="color: #ffffff;">Notice</a></button>
+        <button type="button" class="btn btn-primary"><a href="{{url('file')}}" style="color: #ffffff;">Events</a></button>
+        <button type="button" class="btn btn-primary"><a href="{{url('file')}}" style="color: #ffffff;">File Upload</a></button>
     </div>
 
 </div>
