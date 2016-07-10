@@ -7,31 +7,51 @@
     <!-- Bootstrap css file-->
     <link rel="stylesheet" href="{{ URL::to('src/css/bootstrap.min.css')}}">
 
+    <style>
+        div.card {
+            width: 250px;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            /*text-align: center;*/
+            padding: 10px;
+        }
+    </style>
+
 </head>
 <body>
 @include('includes.dashboard_header')
 <div class="container">
-    <div class="btn-group">
-        <div class="btn-group">
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                file upload <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="{{url('upload-files')}}">Upload File</a></li>
-                <li><a href="#">Smartphone</a></li>
-            </ul>
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card">
+                    @foreach($infos as $info)
+                        <img src="{{asset('user_images/'.$info->image)}}" width="100px" height="150px"> <br>
+                        Name: {{$info->name}} <br>
+                        Roll: {{$info->id}} <br>
+                        DOB: {{$info->dob}} <br>
+                        Address: {{$info->address}} <br>
+                        Email: {{$info->email}} <br>
+                        Contact: {{$info->contact_number}} <br>
+                    @endforeach
+
+            </div>
         </div>
-        <button type="button" class="btn btn-primary">Apple</button>
-        <button type="button" class="btn btn-primary">Samsung</button>
+        <div class="col-sm-8">
+            <div class="btn-group">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        file upload <span class="caret"></span></button>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="{{url('upload-files')}}">Upload File</a></li>
+                        <li><a href="#">Smartphone</a></li>
+                    </ul>
+                </div>
+                <button type="button" class="btn btn-primary">Apple</button>
+                <button type="button" class="btn btn-primary">Samsung</button>
+            </div>
+        </div>
     </div>
-   {{$student_info}}
-    @foreach($infos as $info)
-    {{$info->name}}
-    {{$info->dob}}
-    {{$info->address}}
-    {{$info->email}}
-    {{$info->contact_number}}
-    <img src="{{asset('user_images/'.$info->image)}}">
-    @endforeach
+
+
 </div>
 
 @include('includes.dashboard_footer')
