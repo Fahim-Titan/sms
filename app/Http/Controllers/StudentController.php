@@ -3,15 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Carbon\Carbon;
 use App\Http\Requests;
-
+use Illuminate\Support\Facades\Auth;
+use DB;
 class StudentController extends Controller
 {
     //
     public function index()
     {
-        return view('student.dashboard');
+        $student_info = Auth::id();
+        $infos = DB::table('users')->where('id', '=', $student_info)->get();
+
+        return view('student.dashboard', compact('student_info','infos'));
+//        return view('student.dashboard')->with('student_info');
     }
 
     /**

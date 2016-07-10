@@ -23,6 +23,15 @@
         <button type="button" class="btn btn-primary">Apple</button>
         <button type="button" class="btn btn-primary">Samsung</button>
     </div>
+   {{$student_info}}
+    @foreach($infos as $info)
+    {{$info->name}}
+    {{$info->dob}}
+    {{$info->address}}
+    {{$info->email}}
+    {{$info->contact_number}}
+    <img src="{{asset('user_images/'.$info->image)}}">
+    @endforeach
 </div>
 
 @include('includes.dashboard_footer')
