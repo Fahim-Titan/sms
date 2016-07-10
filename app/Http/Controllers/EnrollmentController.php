@@ -10,8 +10,10 @@ class EnrollmentController extends Controller {
   public function index()
   {
 //    return 'u r in enrollments page';
-    $info = DB::Select(DB::raw("select subjects.sub_id,subjects.cb_id, class_branches.name, subjects.sub_name, subjects.textbook_name from class_branches, subjects where class_branches.cb_id = subjects.cb_id"));
+  //  $info = DB::Select(DB::raw("select subjects.sub_id,subjects.cb_id, class_branches.name, subjects.sub_name, subjects.textbook_name from class_branches, subjects where class_branches.cb_id = subjects.cb_id"));
+    $info = DB::table('class_branches')->lists('name','cb_id');
     return view('enrollments',compact('info'));
+//    return view('enrollments');
   }
 
   /**

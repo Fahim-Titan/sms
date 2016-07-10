@@ -45,6 +45,7 @@
             </ul>
         </div>
         <button type="button" class="btn btn-primary"><a href="{{url('enrollment')}}" style="color: #ffffff;">Enrollment</a></button>
+        <button type="button" class="btn btn-primary"><a href="{{url('promote')}}" style="color: #ffffff;">Promoted Students</a></button>
         <button type="button" class="btn btn-primary"><a href="{{url('result')}}" style="color: #ffffff;">Result</a></button>
         <button type="button" class="btn btn-primary"><a href="{{url('file')}}" style="color: #ffffff;">Notice</a></button>
         <button type="button" class="btn btn-primary"><a href="{{url('file')}}" style="color: #ffffff;">Events</a></button>

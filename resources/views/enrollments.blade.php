@@ -25,7 +25,7 @@
 		</div>
 		<div class="form-group">
 			{!! Form::label('cb_id', 'Class Branch ID:') !!}
-			{!! Form::text('cb_id',null,['class' => 'form-control']) !!}
+			{!! Form::select('cb_id',$info,null,['placeholder' => 'Pick your class', 'class' => 'form-control']) !!}
 		</div>
 		<div class="form-group">
 			{!! Form::submit(null, ['class' => 'btn btn-default']) !!}

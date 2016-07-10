@@ -53,6 +53,8 @@ Route::get('/add-class','Class_branchController@create');
 //subject
 Route::get('/add-subject','SubjectController@create');
 
+//promote
+Route::get('/promote','EnrollmentController@index');
 
 
 //for teacher links
