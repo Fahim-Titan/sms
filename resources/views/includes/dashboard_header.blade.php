@@ -11,7 +11,7 @@
             </button>
 
             <!-- Branding Image -->
-            <a class="navbar-brand" href="{{ url('/') }}">
+            <a class="navbar-brand">
                 <b>Night Watch</b> Primary School
             </a>
         </div>
@@ -24,7 +24,7 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="{{ url('/') }}">Dashboard</a></li>
+                {{--<li><a href="{{ url('/') }}">Dashboard</a></li>--}}
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>
