@@ -4,6 +4,7 @@ use App\User;
 use Carbon\Carbon;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
+use DB;
 class UserController extends Controller {
 
   /**
@@ -101,6 +102,13 @@ class UserController extends Controller {
   public function destroy($id)
   {
     
+  }
+
+
+  public function teacher_list()
+  {
+    $teacher_list = DB::table('users')->where('roles','=','teacher')->get();
+      return view('others.teacher_list',compact('teacher_list'));
   }
   
 }

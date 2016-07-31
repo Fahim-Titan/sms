@@ -34,6 +34,19 @@ Route::auth();
 Route::get('/home', 'HomeController@index');
 
 
+//front page links
+
+//teacher list
+Route::get('/teacher_list','UserController@teacher_list');
+
+
+
+
+
+
+
+
+
 //for admin links
 //student
 //create a student. -- need to create a new blade page.
