@@ -1,0 +1,11 @@
+update Enrollments
+set cbid=3
+where id in
+(
+
+select id from Enrollments
+where cbid=2
+except 
+select id from Enrollments
+where id=15
+)

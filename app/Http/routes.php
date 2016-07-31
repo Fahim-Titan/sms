@@ -38,7 +38,11 @@ Route::get('/home', 'HomeController@index');
 
 //teacher list
 Route::get('/teacher_list','UserController@teacher_list');
-
+Route::get('/notice_list','FileController@notice_list');
+Route::get('/course_list',function()
+{
+    return view ('others.course_list');
+});
 
 
 

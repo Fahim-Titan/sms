@@ -5,6 +5,7 @@ use Carbon\Carbon;
 use App\Http\Requests;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
+use DB;
 class FileController extends Controller {
 
   /**
@@ -95,7 +96,13 @@ class FileController extends Controller {
   {
     
   }
-  
+
+  public function notice_list()
+  {
+      $notice_list = DB::table('files')->where('type','=','notice')->get();
+      return view('others.notice_list',compact('notice_list'));
+  }
+
 }
 
 ?>
