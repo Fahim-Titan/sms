@@ -44,7 +44,7 @@ class FileController extends Controller {
     $fileUpload = new File();
     $fileUpload->id = Auth::id();
     $fileUpload->date = $request->date;
-    $fileUpload->type = $request->type;
+    $fileUpload->type = 'file';
 
     if($request->hasFile('file_path')){
       $file = Input::file('file_path');

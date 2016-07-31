@@ -26,10 +26,10 @@
 			{!! Form::label('date', 'Date:') !!}
 			{!! Form::date('date',null,['class' => 'form-control']) !!}
 		</div>
-		<div class="form-group">
-			{!! Form::label('type', 'Type:') !!} <br>
-			{!! Form::select('type', array('notice'=> 'Notices', 'files' => 'Files'), null, ['placeholder' => 'Select your roles', 'class' => 'form-control'])!!}
-		</div>
+		{{--<div class="form-group">--}}
+			{{--{!! Form::label('type', 'Type:') !!} <br>--}}
+			{{--{!! Form::select('type', array('notice'=> 'Notices', 'files' => 'Files'), null, ['placeholder' => 'Select your roles', 'class' => 'form-control'])!!}--}}
+		{{--</div>--}}
 
 		<div class="form-group">
 			{!! Form::submit(null, ['class' => 'btn btn-default']) !!}
