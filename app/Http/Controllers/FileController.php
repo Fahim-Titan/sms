@@ -29,6 +29,11 @@ class FileController extends Controller {
     return view('files');
   }
 
+    public function create_notice()
+    {
+        return view('admin.files_notice');
+    }
+
   /**
    * Store a newly created resource in storage.
    *
@@ -52,6 +57,8 @@ class FileController extends Controller {
 
     return "saved";
   }
+
+
 
   /**
    * Display the specified resource.
@@ -97,11 +104,7 @@ class FileController extends Controller {
     
   }
 
-  public function notice_list()
-  {
-      $notice_list = DB::table('files')->where('type','=','notice')->get();
-      return view('others.notice_list',compact('notice_list'));
-  }
+
 
 }
 

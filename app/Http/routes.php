@@ -28,6 +28,7 @@ Route::resource('result', 'ResultController');
 Route::resource('exam_info', 'Exam_infoController');
 Route::resource('admin','AdminController');
 Route::resource('student','StudentController');
+Route::resource('notice', 'NoticeController');
 
 Route::auth();
 
@@ -38,7 +39,9 @@ Route::get('/home', 'HomeController@index');
 
 //teacher list
 Route::get('/teacher_list','UserController@teacher_list');
-Route::get('/notice_list','FileController@notice_list');
+//notice list
+//-> it will get its links from resource
+//course list
 Route::get('/course_list',function()
 {
     return view ('others.course_list');
@@ -57,6 +60,9 @@ Route::get('/course_list',function()
 Route::get('/add-student','UserController@create');
 //need to think about this. how do i want to update a student!!
 Route::get('/update-student','UserController@update');
+//upload notice
+Route::get('/upload_notice','NoticeController@create');
+
 
 //teacher
 //create a teacher
