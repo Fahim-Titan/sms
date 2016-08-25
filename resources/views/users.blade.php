@@ -109,8 +109,10 @@
 	</div>
 	<div class="form-group">
 		{!! Form::file('image',null,['class' => 'form-control']) !!}
-	</div>:label('image', 'Image:') !!}
-		{!! Form:
+	</div>
+	<div class="form-group">
+		{!! Form::label('image', 'Image:') !!}
+		{!! Form::file('image',null,['class' => 'form-control']) !!}
 	<div class="form-group">
 		{!! Form::label('qualification', 'Qualification:') !!}
 		{!! Form::text('qualification',null,['class' => 'form-control']) !!}

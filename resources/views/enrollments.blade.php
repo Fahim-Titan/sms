@@ -91,6 +91,21 @@
 	{{--{{$key-> cb_id}} -> {{$key->name}}--}}
 	{{--<br>--}}
 	{{--@endforeach--}}
+
+
+    @if (!empty($success))
+        {{ $success }}
+    @endif
+
+    @if($errors->any())
+
+        <ul class="alert alert-danger">
+            @foreach($errors->all() as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
+    @endif
+
 </div>
 <!-- initialize jQuery Library -->
 <script src="{{ URL::to('src/js/jequery.min.js')}}"></script>

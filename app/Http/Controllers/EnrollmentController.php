@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
 use DB;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
+use App\Http\Requests;
+use App\Enrollment;
 class EnrollmentController extends Controller {
 
   /**
@@ -31,9 +35,14 @@ class EnrollmentController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Requests\CreateEnrollmentRequest $request)
   {
-    
+    $enroll = new Enrollment();
+    $enroll->id = $request->id;
+    $enroll->cb_id = $request->cb_id;
+    $enroll->save();
+    return 'saved';
+    //return view('enrollments')->withSuccess('data has been saved');
   }
 
   /**
