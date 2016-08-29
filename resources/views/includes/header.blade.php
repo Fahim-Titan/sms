@@ -28,7 +28,7 @@
                 <li><a href="{{url('/teacher_list')}}">Teacher List</a></li>
                 <li><a href="#">Course</a></li>
                 <li><a href="{{url('/notice')}}">Notices</a></li>
-                <li><a href="#">Contact</a></li>
+                <li><a href="{{url('/contact')}}">Contact</a></li>
                 <!-- Authentication Links -->
                 @if (Auth::guest())
                     <li><a href="{{ url('/login') }}">Login</a></li>

@@ -46,6 +46,9 @@ Route::get('/course_list',function()
 {
     return view ('others.course_list');
 });
+Route::get('/contact',function(){
+   return view('others.contact');
+});
 
 
 
