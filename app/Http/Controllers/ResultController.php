@@ -1,5 +1,8 @@
 <?php namespace App\Http\Controllers;
 
+//use Symfony\Component\HttpFoundation\Request;
+use Request;
+use DB;
 class ResultController extends Controller {
 
   /**
@@ -9,7 +12,9 @@ class ResultController extends Controller {
    */
   public function index()
   {
-    return 'u r in results page';
+//this line needs to be used
+//    select Subject.sub_id,Class.cb_id, Subject.sub_name ,Class.name from Subject,Class where Subject.cb_id=Class.cb_id
+    return view('results');
   }
 
   /**
@@ -19,7 +24,18 @@ class ResultController extends Controller {
    */
   public function create()
   {
-    return view('results');
+    $sub_id = Request::get('sub_id');
+    $e_id = Request::get('e_id');
+    //first attempt
+//    $id = DB::table('enrollments')
+//        ->join('subjects',function($join){
+//          $join->on('enrollments.cb_id','=','subjects.cb_id')
+//            ->where('subjects.sub_id','=','$sub_id');
+//        })->get();
+
+//second attempt
+    $id=DB::table('enrollments')->join('subjects','enrollments.cb_id','=','subjects.cb_id')->where('subjects.sub_id','=',$sub_id)->get();
+    return view('upload_result',compact('id','sub_id'));
   }
 
   /**

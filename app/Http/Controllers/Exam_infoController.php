@@ -1,5 +1,9 @@
 <?php namespace App\Http\Controllers;
-
+use App\Exam_info;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Input;
+use DB;
+use App\Http\Requests;
 class Exam_infoController extends Controller {
 
   /**
@@ -9,7 +13,7 @@ class Exam_infoController extends Controller {
    */
  public function index()
   {
-    return 'exam info page';
+   return view('exam_infos');
   }
 
   /**
@@ -27,9 +31,12 @@ class Exam_infoController extends Controller {
    *
    * @return Response
    */
-  public function store()
+  public function store(Requests\exam_info $request)
   {
-
+    $info = new Exam_info();
+    $info->type = $request->type;
+   $info->save();
+   return 'data saved';
   }
 
   /**
