@@ -13,8 +13,10 @@ class ResultController extends Controller {
   public function index()
   {
 //this line needs to be used
-//    select Subject.sub_id,Class.cb_id, Subject.sub_name ,Class.name from Subject,Class where Subject.cb_id=Class.cb_id
-    return view('results');
+//select subjects.sub_id,class_branches.cb_id, subjects.sub_name ,class_branches.name from subjects,class_branches where subjects.cb_id=class_branches.cb_id
+//    $sub_info = DB::table('subjects')->join('class_branches','subjects.cb_id')
+    $sub_info = DB::table('subjects')->pluck('sub_name','sub_id');
+    return view('results',compact('sub_info'));
   }
 
   /**
