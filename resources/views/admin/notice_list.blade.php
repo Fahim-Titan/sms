@@ -18,6 +18,15 @@
     <h1 class="text-center">Add Files</h1>
     <hr>
     {!! Form::open(array('route' => 'notice.store', 'method' => 'POST', 'files' => true)) !!}
+
+    <div class="form-group">
+        {!! Form::label('heading', 'Heading: ') !!}
+        {!! Form::text('heading',null,['class' => 'form-control']) !!}
+    </div>
+    <div class="form-group">
+        {!! Form::label('details', 'Details: ') !!}
+        {!! Form::textarea('details',null,['class' => 'form-control']) !!}
+    </div>
     <div class="form-group">
         {!! Form::label('file_path', 'File path:') !!}
         {!! Form::file('file_path',null,['class' => 'form-control']) !!}

@@ -39,6 +39,8 @@ class NoticeController extends Controller
         $fileUpload->id = Auth::id();
         $fileUpload->date = $request->date;
         $fileUpload->type = 'notice';
+        $fileUpload->file_heading = $request->heading;
+        $fileUpload->file_description = $request->details;
 
         if($request->hasFile('file_path')){
             $file = Input::file('file_path');

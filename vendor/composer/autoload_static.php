@@ -308,6 +308,7 @@ class ComposerStaticInit990cefb5ced40144ed781cc5877746da
         'CreateTeacherAssignsTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_24_124328_create_teacher_assigns_table.php',
         'CreateUsersTable' => __DIR__ . '/../..' . '/database/migrations/2016_05_24_124328_create_users_table.php',
         'DatabaseSeeder' => __DIR__ . '/../..' . '/database/seeds/DatabaseSeeder.php',
+        'FileHeadindgDetailsColumnAdd' => __DIR__ . '/../..' . '/database/migrations/2016_09_12_051359_file_headindg_details_column_add.php',
         'File_Iterator' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Iterator.php',
         'File_Iterator_Facade' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Facade.php',
         'File_Iterator_Factory' => __DIR__ . '/..' . '/phpunit/php-file-iterator/src/Factory.php',
