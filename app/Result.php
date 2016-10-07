@@ -8,7 +8,7 @@ class Result extends Model {
 
 	protected $table = 'results';
 	public $timestamps = true;
-	protected $fillable = array('id', 'sub_id', 'e_id');
+	protected $fillable = array('id', 'sub_id', 'e_id','marks');
 
 	public function exam_info()
 	{

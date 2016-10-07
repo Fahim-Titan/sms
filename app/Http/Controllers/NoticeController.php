@@ -51,7 +51,7 @@ class NoticeController extends Controller
         }
         $fileUpload->save();
 
-        return "saved";
+        return view('admin.dashboard')->withSuccess('Notice is created');
     }
 
 
