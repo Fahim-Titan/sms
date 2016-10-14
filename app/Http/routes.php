@@ -65,7 +65,10 @@ Route::get('/add-student','UserController@create');
 Route::get('/update-student','UserController@update');
 //upload notice
 Route::get('/upload_notice','NoticeController@create');
-
+Route::get('/upload_result',function(){
+    return view('upload_result');
+});
+Route::post('/uploadResult','ResultController@postResult');
 
 //teacher
 //create a teacher

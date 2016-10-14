@@ -1,12 +1,15 @@
 <?php namespace App\Http\Controllers;
 
 //use Symfony\Component\HttpFoundation\Request;
+use App\Enrollment;
 use App\Result;
+use Excel;
 use Request;
 use DB;
 use App\Http\Requests;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Input;
+
 class ResultController extends Controller {
 public $count = 0;
   /**
@@ -43,7 +46,26 @@ public $count = 0;
     $subject_name = DB::table('subjects')->where('sub_id','=',$sub_id)->pluck('sub_name');
     $id=DB::table('enrollments')->join('subjects','enrollments.cb_id','=','subjects.cb_id')->where('subjects.sub_id','=',$sub_id)->get();
     $count = count($id);
-    return view('upload_result',compact('id','sub_id','subject_name','e_id'));
+    //return view('upload_result',compact('id','sub_id','subject_name','e_id'));
+    $count = 0;
+    $data = array();
+    foreach($id as $info){
+      $count++;
+      $data[$count]=$info->id;
+    }
+//(select * from enrollments);
+//   $model = Result::join('subjects','enrollments.cb_id','=','subjects.cb_id')->where('subjects.sub_id','=',$sub_id)->pluck('id');
+   $model = \DB::connection()->getSchemaBuilder()->getColumnListing("results");
+
+    Excel::create('Filename',function($excel) use($model){
+      $excel->setTitle('result for $subject_name');
+      $excel->sheet('Result', function($sheet) use($model) {
+        $sheet->freezeFirstRow();
+//        $sheet->fromArray($data);
+        $sheet->fromModel($model);
+
+      });
+    })->download('xls');
   }
 
   /**
@@ -51,7 +73,7 @@ public $count = 0;
    *
    * @return Response
    */
-  public function store(Requests\uploadResultRequest $request)
+  public function store()
   {
 //    for ($i = 0; $i < 4; $i++){
 //      $result = new Result();
@@ -75,8 +97,60 @@ public $count = 0;
 //    }
 ////    return view('admin.dashboard')->withSuccess('data has been saved');
 //    return $i;
+
+
+    //forgot the times attempt
+
+    if (!Input::hasFile('file')) {
+      return "file nai.";
+    } else {
+      try {
+        Excel::load(Input::file('file'), function ($reader) {
+
+//          foreach ($reader->toArray() as $row) {
+//            Result::firstOrCreate($row);
+//          }
+          $reader->each(function($sheet){
+            Result::firstOrCreate($sheet->toArray());
+          });
+        });
+//        \Session::flash('success', 'Users uploaded successfully.');
+//        return redirect(route('user.index'));
+//      }
+        return "saved";
+      }catch (\Exception $e) {
+//        \Session::flash('error', $e->getMessage());
+//        return redirect(route('user.index'));
+        return "not saved $e";
+      }
+    }
   }
 
+//public  function postResult(){
+//  if (!Input::hasFile('file')) {
+//    return "file nai.";
+//  } else {
+//    try {
+//      Excel::load(Input::file('file'), function ($reader) {
+//
+////          foreach ($reader->toArray() as $row) {
+////            Result::firstOrCreate($row);
+////          }
+//        $reader->each(function($sheet){
+//          Result::firstOrCreate($sheet->toArray());
+//        });
+//      });
+////        \Session::flash('success', 'Users uploaded successfully.');
+////        return redirect(route('user.index'));
+////      }
+//      return "saved";
+//    }catch (\Exception $e) {
+////        \Session::flash('error', $e->getMessage());
+////        return redirect(route('user.index'));
+//      return "not saved $e";
+//    }
+//  }
+//}
   /**
    * Display the specified resource.
    *

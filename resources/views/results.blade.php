@@ -12,7 +12,7 @@
 
 		</li>
 		<li>
-			{!! Form::submit('generate') !!}
+			{!! Form::submit('download .xls file') !!}
 		</li>
 	</ul>
 {!! Form::close() !!}

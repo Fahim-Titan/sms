@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Result extends Model {
 
 	protected $table = 'results';
-	public $timestamps = true;
+	public $timestamps = false;
 	protected $fillable = array('id', 'sub_id', 'e_id','marks');
 
 	public function exam_info()
