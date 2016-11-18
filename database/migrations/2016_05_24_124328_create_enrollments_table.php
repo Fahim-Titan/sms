@@ -10,7 +10,7 @@ class CreateEnrollmentsTable extends Migration {
 		Schema::create('enrollments', function(Blueprint $table) {
 			$table->timestamps();
 			$table->integer('id')->unsigned();
-			$table->integer('cb_id')->unsigned();
+
 		});
 	}
 

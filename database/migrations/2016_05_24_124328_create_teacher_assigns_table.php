@@ -9,7 +9,7 @@ class CreateTeacherAssignsTable extends Migration {
 	{
 		Schema::create('teacher_assigns', function(Blueprint $table) {
 			$table->integer('sub_id')->unsigned();
-			$table->integer('cb_id')->unsigned();
+
 			$table->integer('id')->unsigned();
 			$table->timestamps();
 		});

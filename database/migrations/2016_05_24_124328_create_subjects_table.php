@@ -9,7 +9,7 @@ class CreateSubjectsTable extends Migration {
 	{
 		Schema::create('subjects', function(Blueprint $table) {
 			$table->increments('sub_id');
-			$table->integer('cb_id')->unsigned();
+
 			$table->string('sub_name', 100);
 			$table->string('textbook_name', 100)->nullable();
 			$table->timestamps();

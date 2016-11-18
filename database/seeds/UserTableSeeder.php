@@ -14,7 +14,7 @@ class UserTableSeeder extends Seeder
     public function run()
     {
         $faker = Faker::create();
-        foreach (range(1,30) as $index) {
+        foreach (range(1,80) as $index) {
             DB::table('users')->insert([
                 'name' => $faker->name,
                 'blood_type' => '',
